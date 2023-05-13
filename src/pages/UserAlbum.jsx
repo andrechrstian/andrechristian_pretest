@@ -7,12 +7,15 @@ const UserPost = () => {
   const navigate = useNavigate();
   const [dataUserAlbum, setDataUserAlbum] = useState([]);
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListAlbum = async () => {
+    setIsLoading(true);
     let res = await axios.get(
       `https://jsonplaceholder.typicode.com/albums?userId=${id}`
     );
     setDataUserAlbum(res.data);
+    setIsLoading(false);
   };
 
   const navigateToPhotos = (id) => {
@@ -22,6 +25,9 @@ const UserPost = () => {
   useEffect(() => {
     fetchListAlbum();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+
   return (
     <div className="userAlbum-full">
       <div className="userAlbum-container">

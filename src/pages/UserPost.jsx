@@ -7,12 +7,15 @@ const UserPost = () => {
   const navigate = useNavigate();
   const [dataUserPost, setDataUserPost] = useState([]);
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListPost = async () => {
+    setIsLoading(true);
     let res = await axios.get(
       `https://jsonplaceholder.typicode.com/posts?userId=${id}`
     );
     setDataUserPost(res.data);
+    setIsLoading(false);
   };
 
   const navigateToComment = (id) => {
@@ -22,6 +25,9 @@ const UserPost = () => {
   useEffect(() => {
     fetchListPost();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
+
   return (
     <div className="userPost-full">
       <div className="userPost-container">

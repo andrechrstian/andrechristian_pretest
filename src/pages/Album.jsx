@@ -6,10 +6,13 @@ import "./Album.css";
 const Album = () => {
   const navigate = useNavigate();
   const [dataAlbum, setDataAlbum] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListAlbum = async () => {
+    setIsLoading(true);
     let res = await axios.get("https://jsonplaceholder.typicode.com/albums");
     setDataAlbum(res.data);
+    setIsLoading(false);
   };
 
   const navigateToPhotos = (id) => {
@@ -19,6 +22,8 @@ const Album = () => {
   useEffect(() => {
     fetchListAlbum();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="album-full">

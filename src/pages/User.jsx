@@ -6,11 +6,14 @@ import "./User.css";
 const User = () => {
   const navigate = useNavigate();
   const [dataUser, setDataUser] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListUser = async () => {
+    setIsLoading(true);
     let res = await axios.get("https://jsonplaceholder.typicode.com/users");
     console.log(res.data);
     setDataUser(res.data);
+    setIsLoading(false);
   };
 
   const navigateToUserPost = (id) => {
@@ -24,6 +27,8 @@ const User = () => {
   useEffect(() => {
     fetchListUser();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="user-card">

@@ -7,12 +7,15 @@ const Photo = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const [dataPhoto, setDataPhoto] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListPhoto = async () => {
+    setIsLoading(true);
     let res = await axios.get(
       `https://jsonplaceholder.typicode.com/albums/${id}/photos`
     );
     setDataPhoto(res.data);
+    setIsLoading(false);
   };
 
   const navigateToPhotos = (id) => {
@@ -22,6 +25,8 @@ const Photo = () => {
   useEffect(() => {
     fetchListPhoto();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="photo-full">

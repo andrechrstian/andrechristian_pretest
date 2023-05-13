@@ -10,10 +10,13 @@ const Post = () => {
   const [body, setBody] = useState("");
   const [editIndex, setEditIndex] = useState("");
   const [isEdit, setIsEdit] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListPost = async () => {
+    setIsLoading(true);
     let res = await axios.get("https://jsonplaceholder.typicode.com/posts");
     setDataPost(res.data);
+    setIsLoading(false);
   };
 
   //Delete Function
@@ -60,6 +63,8 @@ const Post = () => {
   useEffect(() => {
     fetchListPost();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="post-full">

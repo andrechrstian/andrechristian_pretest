@@ -11,12 +11,15 @@ const PostID = () => {
   const [bodyEdit, setBodyEdit] = useState("");
   const [isEdit, setIsEdit] = useState(false);
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(false);
 
   const fetchListPostID = async () => {
+    setIsLoading(true);
     let res = await axios.get(
       `https://jsonplaceholder.typicode.com/posts/${id}`
     );
     setDataPostID(res.data);
+    setIsLoading(false);
   };
 
   const fetchListComment = async () => {
@@ -72,6 +75,8 @@ const PostID = () => {
     fetchListPostID();
     fetchListComment();
   }, []);
+
+  if (isLoading) return <p>Loading...</p>;
 
   return (
     <div className="postID-full">
