@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./component/Navbar";
+import Album from "./pages/Album";
+import Post from "./pages/Post";
+import User from "./pages/User";
+import Photo from "./pages/Photo";
+import PhotoID from "./pages/PhotoID";
+import PostID from "./pages/PostID";
+import UserPost from "./pages/UserPost";
+import UserAlbum from "./pages/UserAlbum";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<User />} />
+        <Route path="/user-post/:id" element={<UserPost />} />
+        <Route path="/user-album/:id" element={<UserAlbum />} />
+        <Route path="/album" element={<Album />} />
+        <Route path="/album/:id" element={<Photo />} />
+        <Route path="/photo/:id" element={<PhotoID />} />
+        <Route path="/post" element={<Post />} />
+        <Route path="/post/:id" element={<PostID />} />
+      </Routes>
     </div>
   );
-}
+};
 
 export default App;

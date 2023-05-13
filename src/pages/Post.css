@@ -1,0 +1,75 @@
+.post-full {
+  padding: 2rem;
+  width: 100%;
+}
+
+.post-container {
+  max-width: 1100px;
+  margin: auto;
+}
+
+.headline-post {
+  display: flex;
+
+  font-weight: 700;
+  text-align: center;
+  margin-left: 100px;
+}
+
+.form-add-post {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 16px;
+  margin: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
+.post-card {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+  justify-content: center;
+}
+
+.post-card-1 {
+  width: 450px;
+  height: 300px;
+  padding: 24px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background: #ffffff;
+}
+
+.post-card-p-1 {
+  font-weight: 700;
+  width: 353px;
+  height: 58px;
+}
+
+.post-card-p-2 {
+  width: 405px;
+  height: 100px;
+}
+
+.post-card-deleteBtn {
+  margin-top: 50px;
+  border: 1px solid #fa2c5a;
+  background-color: red;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.post-card-editbtn {
+  border: 1px solid green;
+  background-color: green;
+  font-weight: 600;
+  color: #ffffff;
+  margin-left: 30px;
+}

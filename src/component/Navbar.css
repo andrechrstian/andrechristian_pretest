@@ -1,0 +1,34 @@
+.navbar-container {
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  height: 118px;
+  background: lightblue;
+  margin: auto;
+  padding: 10px;
+}
+
+.navbar-headline {
+  font-weight: 700;
+  font-size: 40px;
+  color: white;
+  padding-left: 50px;
+}
+
+.navbar-link {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  padding-left: 43px;
+  margin-top: 15px;
+  font-weight: 700;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.navbar-link a {
+  color: white;
+  box-shadow: 0px 0px 4px rgba(7, 7, 7, 0.15);
+  border-radius: 5px;
+}

@@ -1,0 +1,19 @@
+.userPost-full {
+  width: 100%;
+  padding: 2rem;
+}
+
+.userPost-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  margin: 30px;
+  gap: 20px;
+}
+
+.userPost-card {
+  width: 30%;
+  gap: 16px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}

@@ -1,0 +1,54 @@
+.postID-full {
+  width: 100%;
+  padding: 2rem;
+}
+
+.postID-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.postID-card-1 {
+  align-items: center;
+  width: 70%;
+  gap: 16px;
+  margin: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+}
+
+.postID-card-2 {
+  margin-left: 205px;
+  padding-top: 20px;
+  font-size: large;
+  font-weight: 700;
+}
+
+.form-add-comment {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 230px;
+  gap: 16px;
+  margin: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.postID-card-4 {
+  align-items: center;
+  width: 70%;
+  height: 230px;
+  gap: 16px;
+  margin: auto;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  padding: 30px;
+  margin-bottom: 20px;
+}
+
+.postID-card-5 {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+}

@@ -1,0 +1,31 @@
+.user-card {
+  justify-content: center;
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-top: 24px;
+}
+
+.user-card-1 {
+  width: 351px;
+  height: 270px;
+  padding: 24px;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background: #ffffff;
+}
+
+.user-card-btn-post {
+  margin-right: 30px;
+  width: 90px;
+  background-color: lightblue;
+}
+.user-card-btn-album {
+  margin-right: 30px;
+  width: 90px;
+  background-color: lightblue;
+}
