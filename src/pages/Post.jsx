@@ -76,17 +76,16 @@ const Post = () => {
           {!!dataPost.length
             ? dataPost.map((item, i) => {
                 return (
-                  <div
-                    className="post-card-1"
-                    key={i}
-                    onClick={() => navigateToComment(item.id)}
-                  >
-                    <div className="post-card-p-1">
-                      <p>{item.title}</p>
+                  <div className="post-card-1" key={i}>
+                    <div onClick={() => navigateToComment(item.id)}>
+                      <div className="post-card-p-1">
+                        <p>{item.title}</p>
+                      </div>
+                      <div className="post-card-p-2">
+                        <p>{item.body}</p>
+                      </div>
                     </div>
-                    <div className="post-card-p-2">
-                      <p>{item.body}</p>
-                    </div>
+
                     <div>
                       <button
                         className="post-card-deleteBtn"
